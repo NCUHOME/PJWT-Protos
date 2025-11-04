@@ -3,7 +3,6 @@
 passport jwt 解析服务 grpc proto 包
 
 ```shell
-export GOPRIVATE=github.com/ncuhome
 go get -u github.com/ncuhome/PJWT-Protos
 ```
 
