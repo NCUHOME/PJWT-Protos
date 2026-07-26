@@ -15,7 +15,12 @@ message RequestParseJwt {
 
 message RequestGenToken {
   string xh = 1;
+  // Token validity in nanoseconds. The server enforces its configured maximum.
   int64 valid = 2;
+  // Credential associated with issuer. New issuing clients should provide it.
+  string issue_key = 3;
+  // Stable identifier of the service issuing the token.
+  string issuer = 4;
 }
 
 message ParseJwtResult {
@@ -30,4 +35,5 @@ message GenTokenResult {
 message Claims {
   string id = 1;
   string xh = 2;
+  string issuer = 3;
 }
