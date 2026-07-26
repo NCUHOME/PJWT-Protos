@@ -7,6 +7,9 @@ passport jwt 解析服务 grpc proto 包
 最大有效期。`ParseJwt` 不需要签发凭据，解析结果会通过 `claims.issuer` 返回 JWT
 的签发者。
 
+新版 Go gRPC 代码要求服务端实现按值嵌入 `UnimplementedPassportServer`，不要嵌入
+`*UnimplementedPassportServer`；后者为 nil 时会在注册服务期间触发 panic。
+
 ```shell
 go get -u github.com/ncuhome/PJWT-Protos
 ```
